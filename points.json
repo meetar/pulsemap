@@ -4,7 +4,9 @@
   "features": [
     {
       "type": "Feature",
-      "properties": {},
+      "properties": {
+        "name": "popup1"
+      },
       "geometry": {
         "type": "Point",
         "coordinates": [
@@ -15,7 +17,9 @@
     },
     {
       "type": "Feature",
-      "properties": {},
+      "properties": {
+        "name": "popup2"
+      },
       "geometry": {
         "type": "Point",
         "coordinates": [
@@ -26,7 +30,9 @@
     },
     {
       "type": "Feature",
-      "properties": {},
+      "properties": {
+        "name": "popup3"
+      },
       "geometry": {
         "type": "Point",
         "coordinates": [
@@ -37,7 +43,9 @@
     },
     {
       "type": "Feature",
-      "properties": {},
+      "properties": {
+        "name": "popup4"
+      },
       "geometry": {
         "type": "Point",
         "coordinates": [
@@ -48,7 +56,9 @@
     },
     {
       "type": "Feature",
-      "properties": {},
+      "properties": {
+        "name": "popup5"
+      },
       "geometry": {
         "type": "Point",
         "coordinates": [
@@ -59,7 +69,9 @@
     },
     {
       "type": "Feature",
-      "properties": {},
+      "properties": {
+        "name": "popup6"
+      },
       "geometry": {
         "type": "Point",
         "coordinates": [

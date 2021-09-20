@@ -50,8 +50,16 @@ layers:
         data: { source: points }
         draw:
             pulse-points:
+                interactive: true
                 color: rgb(218,	117,	85)
                 size: 15px
+        # highlight:
+        #     draw:
+        #         pulse-points:
+        #             interactive: true
+        #             color: yellow
+        #             size: 15px            
+
     earth:
         data: { source: nextzen }
         draw:
