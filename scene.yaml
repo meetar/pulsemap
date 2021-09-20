@@ -1,0 +1,64 @@
+cameras:
+    camera1:
+        position: [0,0]
+        zoom: 2
+
+scene:
+    background:
+        color: rgb(242, 223, 193)
+    animated: true
+
+sources:
+    nextzen:
+        type: MVT
+        url: https://tile.nextzen.org/tilezen/vector/v1/512/all/{z}/{x}/{y}.mvt
+        url_params:
+            api_key: tsINU1vsQnKLU1jjCimtVw
+        tile_size: 512
+        max_zoom: 16
+        zoom_offset: 4
+    points:
+        type: GeoJSON
+        url: points.json
+
+styles:
+    custom-earth:
+        base: polygons
+        shaders:
+            blocks:
+                position: |
+                    vec3 pos = worldPosition().xyz;
+                    float amount = pow(.5, u_tile_origin.z) * 300000.;
+                    position.xyz += vec3(
+                        cos(pos.x)*amount,
+                        sin(pos.y)*amount,
+                        0);
+    pulse-points:
+        base: points
+        shaders:
+            blocks:
+                position: |
+                    vec3 pos = worldPosition().xyz;
+                    float amount = pow(.5, u_tile_origin.z) * 30000000.;
+                    position.xyz += vec3(
+                        0,
+                        sin(pos.y)*amount*u_time,
+                        0);
+
+layers:
+    points:
+        data: { source: points }
+        draw:
+            pulse-points:
+                color: rgb(218,	117,	85)
+                size: 15px
+    earth:
+        data: { source: nextzen }
+        draw:
+            lines:
+                order: 2
+                color: white
+                width: 1px
+            custom-earth:
+                order: 1
+                color: rgb(134,	190,	167)
