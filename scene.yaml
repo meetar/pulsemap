@@ -62,3 +62,6 @@ layers:
             custom-earth:
                 order: 1
                 color: rgb(134,	190,	167)
+            polygons: # fill cracks between tiles
+                order: 0
+                color: rgb(134,	190,	167)
